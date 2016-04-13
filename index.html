@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Teste</title>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+</head>
+<style>
+	body {
+		margin: 80px auto;
+	}
+
+	/* Usar com Staggered list
+	ul li {
+		padding-bottom: 10px;
+		opacity: 0;
+	}*/
+</style>
+<body>
+
+	<div class="container">
+		<!-- BOTÕES -->
+		<div class="row">
+				<div class="col s12 m12 l12 center-align">
+					<a href="#!" class="btn-large waves-effect waves-light blue darken-2" onclick="meu_clique()"><i class="material-icons left">touch_app</i>Clique aqui</a>
+
+					<a href="#!" class="btn-large waves-effect waves-light tooltipped" data-tooltip="Clique aqui!" data-position="top" data-delay="50"><i class="material-icons left">mouse</i>Passe o mouse</a>
+
+					<button class="btn-large waves-effect waves-light deep-orange darken-3 modal-trigger" data-target="modal1"><i class="material-icons left">launch</i>Abrir Modal</button>
+
+					<a href="#!" class="dropdown-button btn-large deep-purple accent-4" data-hover="true" data-beloworigin="true" data-activates="my-dropdown"><i class="material-icons left">expand_more</i>Clique para abrir</a>
+					<!-- OPÇÕES DROPDOWN -->
+					<ul class="dropdown-content" id="my-dropdown">
+						<li class="waves-effect waves-purple"><a href="#"><span class="deep-purple-text text-darken-4">Teste 01</span></a></li>
+						<li class="waves-effect waves-purple"><a href="#"><span class="deep-purple-text text-darken-4">Teste 02</span></a></li>
+						<li class="divider"></li>
+						<li class="waves-effect waves-purple"><a href="#"><span class="deep-purple-text text-darken-4">Teste 03</span></a></li>
+					</ul>
+				</div>
+		</div>
+
+		<div class="row">
+			<div class="col s3 l3">
+					<img src="imagens/vo-eu.jpg" class="materialboxed responsive-img" data-caption="I and my dear grandmother!" width="200" />
+			</div>
+
+			<div class="col s9 l9">
+						<ul class="collapsible popout" data-collapsible="extendable">
+					    <li>
+					      <div class="collapsible-header"><i class="material-icons">looks_one</i>Primeiro</div>
+					      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+					    </li>
+					    <li>
+					      <div class="collapsible-header"><i class="material-icons">looks_two</i>Segundo</div>
+					      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+					    </li>
+					    <li>
+					      <div class="collapsible-header"><i class="material-icons">looks_3</i>Terceiro</div>
+					      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+					    </li>
+		  		</ul>
+			</div>
+		</div>
+
+		<!-- FAB -->
+		<div class="fixed-action-btn" style="bottom: 24px; right: 24px;">
+			<a href="#!" class="btn-floating btn-large waves-effect waves-light blue darken-2"><i class="material-icons">play_arrow</i></a>
+		</div>
+
+	</div>
+
+	<!-- MODAL -->
+	<div class="modal" id="modal1">
+		<div class="modal-content">
+			<h4>Cabeçalho</h4>
+			<p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+		</div>
+
+		<div class="modal-footer">
+			<a href="#!" class="btn-flat modal-action modal-close waves-effect waves-orange">Close</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<!-- TOAST -->
+	<script>
+		function meu_clique() {
+			Materialize.toast("Cliquei", 3000);
+		}
+	</script>
+
+
+	<!-- MODAL SCRIPT -->
+	<script>
+		$(document).ready(function(){
+			$('.modal-trigger').leanModal({
+				in_duration: 300,
+				out_duration: 500,
+				dismissible: false,
+				opacity: .9
+			});
+			/*{
+				opacity:.9,
+				ready:function(){ close(); }
+			});*/
+		})
+		function close() {
+			setTimeout(function(){
+				$('#modal1').closeModal();
+			}, 4000)
+		}
+	</script>
+	<!-- STAGGERED LIST -->
+	<!--<div class="row">
+			<div class="col s12 m12 l12 center-align">
+				<a href="#!" class="btn-large waves-effect waves-light red accent-4" onclick="Materialize.showStaggeredList('#list')"><i class="material-icons left">share</i>Compartilhar</a>
+			</div>
+	</div>
+
+	<ul id="list">
+		<li><a href="#!" class="btn-floating btn-large cyan"><i class="material-icons">insert_chart</i><a/></li>
+		<li><a href="#!" class="btn-floating btn-large indigo"><i class="material-icons">play_arrow</i><a/></li>
+		<li><a href="#!" class="btn-floating btn-large deep-purple"><i class="material-icons">code</i><a/></li>
+		<li><a href="#!" class="btn-floating btn-large green"><i class="material-icons">message</i><a/></li>
+	</ul>
+	-->
+
+</body>
+</html>
